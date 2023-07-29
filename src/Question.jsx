@@ -4,11 +4,6 @@ import { shuffleArray } from "./Utills"
 import Answer from "./Answer"
 
 export default function Question({ question }) {
-  const [score, setScore] = React.useState(0)
-  function handlelick(){
-   
-    console.log("ul click")
-  }
   const answers = shuffleArray([
     question.correct_answer,
     ...question.incorrect_answers,
@@ -16,14 +11,13 @@ export default function Question({ question }) {
 
   return (
     <div className="card">
-      <div className="question">{decode(question.question)}</div>
-      <ul>
-        <li onClick={handlelick}>
+      <p className="question">{decode(question.question)}</p>
+        <ul>
         {answers.map((answer) => (
           <Answer answer={answer} />
         ))}
-        </li>
-      </ul>
+        </ul>
+      
       <hr />
     </div>
   )

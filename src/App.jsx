@@ -34,12 +34,12 @@ export default function App(){
                 <Question question={question} />
               ))}
               {quizzState === "started" && (
-                <button onClick={checkAnswers}>Check Answers</button>
+                <button className="start-btn btnCheck" onClick={checkAnswers}>Check Answers</button>
               )}
               {quizzState === "finished" && (
                 <div>
                   <h3>You Scored x/{data.results.length} correct answers</h3>
-                  <button onClick={playAgain}>Play Again</button>
+                  <button className="start-btn" onClick={playAgain}>Play Again</button>
                 </div>
               )}
             </div>

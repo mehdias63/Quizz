@@ -42,6 +42,11 @@
     text-align: center;
     margin-top: 25px;
 }
+.btnCheck{
+    display: block;
+    margin: 0 auto;
+    
+}
 p{
     font-weight: bold;
 }
@@ -64,23 +69,33 @@ p{
    line-height: 19px;
    letter-spacing: 0em;
    text-align: left;
+   color:purple;
    }
 ul{
    display: flex;
-    width: 100%;
-    flex-direction: column;
+   width: 100%;
+    flex-direction: row;
     justify-content: space-around;
+    
     
 }
 
-li {
-    font-family: 'Karla', sans-serif;
-    font-weight: 700;
-    margin: .3em 1em;
-    padding: .8em .7em;
-    box-shadow: 2px 2px 2px #ccc;
-    border-radius: 1.3em;
-    cursor: pointer;
-    font-size: 1em;
+.radio-button {
     display: inline-block;
-}
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    margin-right: 10px;
+    background-color: #fff;
+    color: red;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .radio {
+     display: none; 
+    }
+    .radio:checked + label {
+            background-color: blue;
+            color: white;
+    }
+
