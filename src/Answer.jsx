@@ -1,18 +1,19 @@
 import React from "react";
+import Question from "./Question";
 
 export default function Answer({ answer}) {
-        let yellow = '#ffc800';
-        const [bgColor, setBgColor] = React.useState(yellow);
-         const changeColor =()=>{
-            let bgColor = 'red';
-            setBgColor({backgroundColor: bgColor});
-      }
+  const [backgroundColor, setBackgroundColor] =React.useState('white')
+  const handleClick = () => {
+    setBackgroundColor('lime');
+  }
+      
       
     return(
-    
-    <lable className="radio-button" >{answer}
+    <div>
+    <lable className="radio-button" style={{ backgroundColor }} onClick={handleClick}>{answer}
     <input type="radio" name="answer" className="radio" checked/>
     </lable>
+    </div>
     
     )
 

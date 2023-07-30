@@ -8,13 +8,16 @@ export default function Question({ question }) {
     question.correct_answer,
     ...question.incorrect_answers,
   ])
+  
 
   return (
-    <div className="card">
+    <div className="card" >
       <p className="question">{decode(question.question)}</p>
         <ul>
         {answers.map((answer) => (
-          <Answer answer={answer} />
+          <Answer
+           answer={answer}
+           />
         ))}
         </ul>
       

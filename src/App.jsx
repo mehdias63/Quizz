@@ -3,6 +3,7 @@ import data from "./data";
 import Question from "./Question"
 
 export default function App(){
+    const [reset, setReset] = React.useState(false)
     const[quizzState ,setQuizzState]=React.useState("not started")
     function startQuizz(){
         setQuizzState("started")
@@ -14,6 +15,7 @@ export default function App(){
       function playAgain() {
         setQuizzState("not started")
       }
+      
     
       return (
         <div className="wrapper">
@@ -30,9 +32,15 @@ export default function App(){
             <div>
               
               
+              
               {data.results.map((question) => (
-                <Question question={question} />
+                <Question
+                 question={question}
+                 cAnswer={question.correct_answer}
+                 iAnswers={question.incorrect_answers}
+                 />
               ))}
+              
               {quizzState === "started" && (
                 <button className="start-btn btnCheck" onClick={checkAnswers}>Check Answers</button>
               )}
