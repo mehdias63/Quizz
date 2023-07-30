@@ -92,11 +92,4 @@ ul{
     cursor: pointer;
     border-radius: 30%;
   }
-  .radio {
-     display: none; 
-    }
-    .radio:checked + label {
-            background-color: blue;
-            color: white;
-    }
 

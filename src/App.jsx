@@ -47,7 +47,7 @@ export default function App(){
               {quizzState === "finished" && (
                 <div>
                   <h3>You Scored x/{data.results.length} correct answers</h3>
-                  <button className="start-btn" onClick={playAgain}>Play Again</button>
+                  <button className="start-btn btnCheck" onClick={playAgain}>Play Again</button>
                 </div>
               )}
             </div>
