@@ -13,7 +13,7 @@ export default function Question({ question }) {
   return (
     <div className="card" >
       <div className="question">{decode(question.question)}</div>
-        <ul style={{ listStyle: "none" }}>
+        <ul className="answers" style={{ listStyle: "none" }}>
         {answers.map((answer) => (
           <Answer
            answer={answer}
