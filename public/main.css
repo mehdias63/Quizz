@@ -1,144 +1,138 @@
 * {
     box-sizing: border-box;
-}
-.container{
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+  }
+  
+  
+  html, 
+  body,
+  #root {
+      height: 100%;
+  }
+  
+  
+  
+  .container {
+    position: relative;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    background-color: #F5F7FB;
+    color: #293264;
     font-family: 'Karla', sans-serif;
-    width: 70%;
-    height: 75vh;
-    margin: 80px auto;
+  }
+  
+  .circle-yellow{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 0;
+  }
+  
+  .circle-blue{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+  }
+  
+  .btn-primary {
+    border-radius: 15px;
+    background: #4D5B9E; 
+    padding: 1rem 3rem;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    margin: 1rem;
+  }
+  
+  .btn-md {
+    font-size: .75rem;
+  }
+  
+  .align-center {
     display: flex;
     justify-content: center;
-    flex-direction: column;
     align-items: center;
-    box-shadow: 0px 4px 10px 10px #ccc;
-    background: #F5F7FB;
-    border-radius: 15px;
-    position: relative;
-    z-index: 0;
-}
-.upper{
-    position: absolute;
-    top: 0;
-    right: 0;
-}
-.lower{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
-.start-btn {
-    background: #4D5B9E;
-    width: 193px;
-    height: 52px;
-    border-radius: 15px;
-    border: 0;
-    color: #fff;
+    flex-wrap: wrap;
+  }
+  
+  .question {
+    padding: 1rem;
     font-weight: 700;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 19px;
-    text-align: center;
-    margin-top: 25px;
-}
-.btnCheck{
-    display: block;
-    margin: 0 auto;
-    
-}
-p{
-    font-weight: bold;
-}
-.card {
-    width: 100%;
-    height: auto;
-    margin: 2em auto;
-    border-bottom: 2px solid #000;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: .4rem .8em;
-}
-.question {
-    width: 100%;
-   font-family: Karla;
-   font-size: 16px;
-   font-weight: 700;
-   line-height: 19px;
-   letter-spacing: 0em;
-   text-align: left;
-   color:purple;
-   }
-ul{
-   display: flex;
-   width: 100%;
-    flex-direction: row;
-    justify-content: space-around;
-    
-    
-}
-
-.radio-button {
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 10px;
-    margin-right: 10px;
-    background-color: #fff;
-    color: rgb(26, 24, 24);
-    font-size: 14px;
-    cursor: pointer;
-    border-radius: 30%;
+    font-size: 1.5rem;
   }
   
-   li {
+  hr{
+    color: #DBDEF0;
+    margin-top: 2rem;
+    opacity: .5;
+  }
+  
+  .answers {
     list-style-type: none;
-    float: left;
-    margin: 20 5px 0 0;
-    width: 100px;
-    height: 40px;
-    position: relative;
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+    font-size: .9rem;
+    flex-wrap: wrap;
+  
   }
   
-   label, input {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+  .answers li {
+    margin-top: .5rem;
   }
   
-  input[type="radio"] {
-    opacity: 0.01;
-    z-index: 100;
-    
-  }
-  
-  input[type="radio"]:checked+label,
-  .Checked+label {
-    background: yellow;
-  }
-  
-  .donate-now label {
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 10px;
-    margin-right: 10px;
-    background-color: #fff;
-    color: rgb(26, 24, 24);
-    font-size: 14px;
+  .answers label {
+    padding: 0.5rem;
     cursor: pointer;
-    border-radius: 30%;
-    z-index: 90;
-    text-align: center;
+    border-radius: 10px; 
+    border: 0.794px solid #4D5B9E; 
+    color: #293264;
+    margin-left: 50px;
   }
-  dr{
+  
+  .answers label:hover {
+    background: #cbd0e9;
+  }
+  
+  .answers input[type="radio"] {
+    display: none;
+  }
+  
+  .answers input[type="radio"]:disabled + label {
+    cursor: not-allowed;
+    background: unset;
+  }
+  
+  
+  .answers input[type="radio"]:checked + label {
+    background-color: #8e9ef0;
+    border: none;
+    color: white;
     
   }
   
+  .answers input[type="radio"] + label.false {
+    color: rgb(172, 172, 172);
+    border-color: rgb(172, 172, 172);
+  }
+  
+  .answers input[type="radio"]:checked + label.false {
+    color: gray;
+    background-color: #F8BCBC;
+  }
+  
+  .correct{
+    background: #94D7A2 !important;
+    border: none !important;
+  }
 
  
 

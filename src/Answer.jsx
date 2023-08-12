@@ -1,17 +1,18 @@
-import React from "react";
-
-
-export default function Answer({ answer ,  questionId }) {
-  return(
-      <ul className="donate-now">
-      <li >
-      <input id={answer} type="radio" name={`question-${questionId}`} />
-      <label htmlFor={answer} className="lable">{answer}</label>
-      </li>
-      </ul>
-    
-    
-    
-    )
-
+export default function Answer({ answer, questionId, answerQuestion, isFinished, isCorrectAnswer }) {
+  const className = isFinished ? isCorrectAnswer ? "correct" : "false" : ""
+  return (
+    <li>
+      <input id={answer.id}
+        type="radio"
+        name={`question-${questionId}`}
+        onClick={() => answerQuestion(questionId, answer.id)}
+        disabled={isFinished}
+      />
+      <label
+        htmlFor={answer.id}
+        className={className}>
+        {answer.answer}
+      </label>
+    </li>
+  )
 }

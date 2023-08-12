@@ -1,27 +1,22 @@
 import { decode } from "html-entities"
-import React from "react"
-import { shuffleArray } from "./Utills"
 import Answer from "./Answer"
 
-export default function Question({ question }) {
-  const answers = shuffleArray([
-    question.correct_answer,
-    ...question.incorrect_answers,
-  ])
-  
-
+export default function Question({ question, answerQuestion, isFinished }) {
   return (
-    <div className="card" >
-      <div className="question">{decode(question.question)}</div>
-        <ul className="answers" style={{ listStyle: "none" }}>
-        {answers.map((answer) => (
+    <div className="question">
+      <div>{decode(question.question)}</div>
+      <ul className="answers">
+        {question.answers.map((answer) => (
           <Answer
-           answer={answer}
-           questionId={question.id}
-           />
+            key={answer.id}
+            answer={answer}
+            questionId={question.id}
+            answerQuestion={answerQuestion}
+            isFinished={isFinished}
+            isCorrectAnswer={answer.answer === question.correct_answer}
+          />
         ))}
-        </ul>
-      
+      </ul>
       <hr />
     </div>
   )
